@@ -1,8 +1,9 @@
 {
   "name": "ts-mock-api",
-  "version": "1.0.1",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.2",
+  "description": "A TypeScript utility for generating dynamic mock data based on TypeScript types.",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest"
