@@ -41,7 +41,7 @@ const userSchema = {
 const mockUser = generateMockData(userSchema);
 
 console.log(mockUser);
-// Output might be: { name: 'random string', age: 25, isActive: true }
+// Output { name: 'random string', age: 25, isActive: true }
 ```
 
 ### Generating Arrays
