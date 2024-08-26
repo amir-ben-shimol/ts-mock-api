@@ -30,8 +30,6 @@ describe("generateMockData", () => {
 
     const mockData = generateMockData(schema, { arrayLength: 5 }) as unknown as Array<{ names: string[] }>;
 
-    console.log("Generated mockData.names:", mockData);
-
     expect(Array.isArray(mockData)).toBe(true);
     expect(mockData.length).toBe(5);
     mockData.forEach((item) => {
@@ -47,8 +45,6 @@ describe("generateMockData", () => {
     };
 
     const mockData = generateMockData(schema) as unknown as { names: string[] };
-
-    console.log("Generated mockData.names:", mockData);
 
     expect(Array.isArray(mockData.names)).toBe(true);
     expect(mockData.names.length).toBeGreaterThan(0); // Ensure it's not empty
@@ -95,6 +91,43 @@ describe("generateMockData", () => {
     mockData.forEach((item) => {
       expect(typeof item.name).toBe("string");
       expect(typeof item.age).toBe("number");
+    });
+  });
+  it("should apply arrayLength only to the top-level object, not nested objects", () => {
+    const schema: Schema = {
+      name: "string",
+      role: "number",
+      info: {
+        firstName: "string",
+        lastName: "string",
+        isAdmin: "boolean",
+      },
+    };
+
+    const mockData = generateMockData(schema, { arrayLength: 5 }) as unknown as Array<{
+      name: string;
+      role: number;
+      info: {
+        firstName: string;
+        lastName: string;
+        isAdmin: boolean;
+      };
+    }>;
+
+    // Check that the top-level object is an array of 5 items
+    expect(Array.isArray(mockData)).toBe(true);
+    expect(mockData.length).toBe(5);
+
+    // Check that each item in the array is a single object, not an array
+    mockData.forEach((item) => {
+      expect(typeof item.name).toBe("string");
+      expect(typeof item.role).toBe("number");
+
+      // Check that the nested 'info' object is not an array, but a single object
+      expect(typeof item.info).toBe("object");
+      expect(typeof item.info.firstName).toBe("string");
+      expect(typeof item.info.lastName).toBe("string");
+      expect(typeof item.info.isAdmin).toBe("boolean");
     });
   });
 });
