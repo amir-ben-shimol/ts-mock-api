@@ -1,21 +1,20 @@
-import { MockOptions } from "../types/mockOptions";
 import { faker } from "@faker-js/faker";
+import { MockOptions } from "../types/mockOptions";
 
 export const generateRandomValue = (type: string, options: MockOptions = {}): any => {
-  const parsedType = type.includes("[]") ? "array" : type;
+  if (type.endsWith("[]")) {
+    const elementType = type.slice(0, -2); // Remove "[]" to get the element type (e.g., "string[]" -> "string")
+    return Array.from({ length: options.arrayLength || 3 }, () => generateRandomValue(elementType, options));
+  }
 
-  switch (parsedType) {
+  switch (type) {
     case "string":
-      return faker.lorem.words(options.stringLength || 5);
+      return faker.lorem.word();
     case "number":
       return faker.number.int();
     case "boolean":
       return faker.datatype.boolean();
-    case "array":
-      return Array.from({ length: options.arrayLength || 3 }, () =>
-        generateRandomValue(type.replace("[]", ""), options)
-      );
     default:
-      return {}; // For objects, we'll handle this differently
+      return null; // Fallback to handle unexpected types
   }
 };
