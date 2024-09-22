@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./assets/brand.png" width="350" />
+    <img src="https://github.com/amir-ben-shimol/ts-mock-api/blob/main/assets/brand.png" width="350" />
 </p>
 
 <p align="center">
