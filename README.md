@@ -1,20 +1,34 @@
+<p align="center">
+    <img src="./assets/logo.png" width="350" />
+</p>
+
+<p align="center">
+	<a href="https://github.com/amir-ben-shimol/ts-mock-api">
+    	<img src="https://img.shields.io/github/actions/workflow/status/amir-ben-shimol/ts-mock-api/integrate.yaml?label=CI&logo=GitHub" alt="CI status">
+  	</a>
+	<a href="https://www.npmjs.com/package/ts-mock-api">
+    	<img src="https://img.shields.io/npm/dm/ts-mock-api?logo=NPM" alt="npm downloads">
+  	</a>
+	<a href="https://github.com/amir-ben-shimol/ts-mock-api">
+    	<img src="https://img.shields.io/npm/l/ts-mock-api" alt="npm license">
+  	</a>
+	<a href="https://github.com/amir-ben-shimol/ts-mock-api">
+    	<img src="https://img.shields.io/npm/v/ts-mock-api?label=version" alt="version">
+  	</a>
+</p>
+
+<hr />
+
 # ts-mock-api
 
 **ts-mock-api** is a TypeScript utility for generating dynamic mock data based on TypeScript types. This package helps developers quickly create mock APIs and test data during development, especially when working with complex TypeScript interfaces.
 
-## Features
-
-- **TypeScript-first**: Designed to work seamlessly with TypeScript types and interfaces.
-- **Dynamic Data Generation**: Automatically generates mock data based on your TypeScript schema.
-- **Customizable**: Allows customization of string lengths, array sizes, and more.
-- **Supports Basic and Complex Types**: Handles strings, numbers, booleans, arrays, and nested objects.
-
 ## Installation
 
-To install the package, use the following command:
+To use the package you first need to install it as dev dependency:
 
 ```bash
-pnpm add ts-mock-api
+npm i -D ts-mock-api
 ```
 
 ## Usage
@@ -126,14 +140,13 @@ interface MockOptions {
 }
 ```
 
-## Contributing
+## Authors
 
-Contributions are welcome! If you find a bug or have a feature request, please open an issue or submit a pull request on GitHub.
+<a href="https://github.com/amir-ben-shimol">
+    <img src="https://avatars.githubusercontent.com/u/105565954?s=400&u=01efa537bf4368251ffa05954d13aa1861073b39&v=4" height="50" />
+</a>
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+[MIT](https://choosealicense.com/licenses/mit/)
 
-## Acknowledgments
-
-Special thanks to the developers behind the tools and libraries used in this package, such as TypeScript and Faker.js.
