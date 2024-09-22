@@ -1,6 +1,6 @@
 {
   "name": "ts-mock-api",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A TypeScript utility for generating dynamic mock data based on TypeScript types.",
   "main": "dist/index.js",
   "author": "Amir Ben Shimol",
