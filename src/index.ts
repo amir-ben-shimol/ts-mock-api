@@ -1,2 +1,3 @@
-export { generateMockData } from "./generators/mockGenerator";
-export { MockOptions } from "./types/mockOptions";
+export { generateMockData } from '@/generators/mock-generator';
+
+export type { MockOptions } from '@/types/mock-options';
