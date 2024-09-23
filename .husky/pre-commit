@@ -1,0 +1,1 @@
+pnpm type-check && pnpm inflint && pnpm knip && pnpm test && pnpm build
